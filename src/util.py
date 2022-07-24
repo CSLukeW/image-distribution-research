@@ -2,6 +2,7 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Subset
 import numpy as np
+import os
 
 
 def split_train_val(org_train_set, valid_ratio=0.1):
@@ -80,3 +81,12 @@ def train(net, loader, optimizer, epoch, device, log_interval=100):
                 epoch, batch_idx * len(data), len(loader.dataset), 100. * batch_idx / len(loader), loss.item()))
 
     print('\tAccuracy: {:.2f}%'.format(100.0 * correct / len(loader.dataset)))    
+
+
+
+def save_model(model, model_path, filename):
+    """Save model to model_path/filename.pth
+    """
+    if not os.path.exists(model_path):
+        os.makedirs(model_path)
+    torch.save(model.state_dict(), os.path.join(model_path, filename, ".pth"))
