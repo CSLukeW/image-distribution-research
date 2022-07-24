@@ -84,9 +84,13 @@ def train(net, loader, optimizer, epoch, device, log_interval=100):
 
 
 
-def save_model(model, model_path, filename):
+def save_model(model, dataset=None, model_path="models", filename="model"):
     """Save model to model_path/filename.pth
     """
     if not os.path.exists(model_path):
         os.makedirs(model_path)
-    torch.save(model.state_dict(), os.path.join(model_path, filename, ".pth"))
+    if dataset:
+        if not os.path.exists(os.path.join(model_path, dataset)):
+            os.makedirs(os.path.join(model_path, dataset))
+        model_path = os.path.join(model_path, dataset)
+    torch.save(model.state_dict(), os.path.join(model_path, filename + ".pth"))
