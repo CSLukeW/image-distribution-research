@@ -37,6 +37,7 @@ def test(net, loader, device):
     with torch.no_grad():
         for data, target in loader:
 
+            target = target.type(torch.LongTensor)
             data, target = data.to(device), target.to(device)
             
             output = net(data)
@@ -60,6 +61,7 @@ def train(net, loader, optimizer, epoch, device, log_interval=100):
     correct = 0
     for batch_idx, (data, target) in enumerate(loader):
 
+        target = target.type(torch.LongTensor)
         data, target = data.to(device), target.to(device)
         
         # clear up gradients for backprop
