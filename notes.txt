@@ -1,0 +1,15 @@
+Run pretrained on CIFAR10.1
+
+Simple 2D dataset to plot decision boundaries
+Need some complexity in dataset/model
+
+Does complexity of model affect missclass distribution
+
+Big thing is to get rid of correlation among models
+complex networks that learn correct but different functions
+Overfitting is an issue
+
+2D dists with difficult shapes
+3 depths of models
+train and plot decision boundaries
+do the histogram
