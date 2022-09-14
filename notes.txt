@@ -25,3 +25,4 @@ tasks:
 
 - above
 - train same architecture 5x to compare boundaries
+- add configuration if possible
