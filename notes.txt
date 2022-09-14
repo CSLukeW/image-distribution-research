@@ -13,3 +13,10 @@ Overfitting is an issue
 3 depths of models
 train and plot decision boundaries
 do the histogram
+
+
+9/14 meeting
+
+get accuracy closer to 100%
+balance the classes
+adjacent corners not same class (less clear what class the farther we get from dataset)
