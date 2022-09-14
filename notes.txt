@@ -20,3 +20,8 @@ do the histogram
 get accuracy closer to 100%
 balance the classes
 adjacent corners not same class (less clear what class the farther we get from dataset)
+
+tasks:
+
+- above
+- train same architecture 5x to compare boundaries
